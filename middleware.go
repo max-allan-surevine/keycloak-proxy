@@ -68,7 +68,7 @@ func (r *oauthProxy) metricsMiddleware() gin.HandlerFunc {
 	)
 
 	// step: register the metric with prometheus
-	prometheus.MustRegisterOrGet(statusMetrics)
+	prometheus.Register(statusMetrics)
 
 	return func(cx *gin.Context) {
 		// step: permit to next stage
